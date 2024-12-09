@@ -33,6 +33,7 @@ class ChatConsumer(WebsocketConsumer):
         if user_message == '/reset':
             self.scope['session']['current_question_id'] = None
             self.scope['session']['message_history'] = []
+            self.scope['session']['answers'] = []
             self.scope['session'].save()
             return
 
